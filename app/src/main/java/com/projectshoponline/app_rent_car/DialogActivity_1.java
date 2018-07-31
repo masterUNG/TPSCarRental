@@ -77,6 +77,9 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
         //Create Spinner
         createSpinner();
 
+        //Map Controller
+        mapController();
+
         //*** Permission StrictMode
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -212,6 +215,17 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 //            }
 //        });
 
+    }
+
+    private void mapController() {
+        Button button = findViewById(R.id.btnSetMap);
+      button.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent intent = new Intent(DialogActivity_1.this, MapsActivity.class);
+              startActivityForResult(intent, 500);
+          }
+      });
     }
 
     private void createSpinner() {
