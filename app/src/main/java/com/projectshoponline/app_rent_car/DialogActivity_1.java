@@ -11,12 +11,16 @@ import android.os.Handler;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +28,8 @@ import com.squareup.picasso.Picasso;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -57,10 +63,20 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 
     ///////////////
     TextView tv_product_amount;
+
+
+    private String driverIdString;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialogactivity_1);
+
+
+        //Create Spinner
+        createSpinner();
+
         //*** Permission StrictMode
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -197,6 +213,57 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 //        });
 
     }
+
+    private void createSpinner() {
+        Spinner spinner = findViewById(R.id.driverSpinner);
+        String urlJSON = "http://projectshoponline.com/rentcar/getAllDriver.php";
+
+        try {
+            ReadAllDataFromServer readAllDataFromServer = new ReadAllDataFromServer(DialogActivity_1.this);
+            readAllDataFromServer.execute(urlJSON);
+            String jsonString = readAllDataFromServer.get();
+            Log.d("31JulyV1","JSON ==>"+jsonString);
+
+            JSONArray jsonArray = new JSONArray(jsonString);
+
+            final String[] idStrings = new String[jsonArray.length()];
+            String[]strings = new String[jsonArray.length()];
+
+            for(int i=0; i<jsonArray.length(); i+=1){ //i++
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                idStrings[i] = jsonObject.getString("id");
+                strings[i] = jsonObject.getString("Name")+" "+jsonObject.getString("Surname");
+            }
+
+
+            ArrayAdapter<String>stringArrayAdapter = new ArrayAdapter<String>(DialogActivity_1.this,
+                    android.R.layout.simple_expandable_list_item_1,strings);
+            spinner.setAdapter(stringArrayAdapter);
+
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    driverIdString = idStrings[position]; //ตำแหน่งที่เลือกคนขับ
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                    driverIdString = idStrings[0]; //ถ้าไม่ได้เลือกชื่อคนขับจะเลือกตำแหน่ง 0 เป็น default
+                }
+            });
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+
+
+        }
+
+
+
+
+    }
+
     private void updateLabel_1() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
@@ -261,6 +328,7 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
                     //data.add(new BasicNameValuePair("dataname6", textView_Product_price_total.getText().toString()));
 
                     data.add(new BasicNameValuePair("dataname7", strMemberID));
+                    data.add(new BasicNameValuePair("dataname8", driverIdString));
                     poster.doPost(data, new Handler() {
                         public void handleMessage(android.os.Message msg) {
                             switch (msg.what) {

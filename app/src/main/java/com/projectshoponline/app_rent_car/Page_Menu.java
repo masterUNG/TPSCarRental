@@ -89,6 +89,7 @@ public class Page_Menu extends AppCompatActivity{
                 startActivity(newActivity);
             }
         });
+
         //*** Button Next
         final Button b_Show_Category = (Button) findViewById(R.id.b_Show_Category);
         b_Show_Category.setOnClickListener(new View.OnClickListener() {

@@ -1,64 +1,45 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <LinearLayout
-        android:id="@+id/mainLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true"
-        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!-- everything you already have -->
-
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"/>
-
-
-
-        <TextView
-            android:id="@+id/tv_product_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:text=""
-            android:textColor="#FF0066"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/tv_product_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:text=""
-            android:textColor="#FF0066" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:id="@+id/mainLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <!-- everything you already have -->
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"/>
+
+
 
             <TextView
-
+                android:id="@+id/tv_product_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="2dp"
-                android:text="ราคาเช่า"
-                android:textColor="#0000CC" />
+                android:text=""
+                android:textColor="#FF0066"
+                android:visibility="gone"/>
 
             <TextView
-                android:id="@+id/tv_product_price"
+                android:id="@+id/tv_product_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -66,126 +47,200 @@
                 android:text=""
                 android:textColor="#FF0066" />
 
-            <TextView
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
 
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:text="ราคาเช่า"
+                    android:textColor="#0000CC" />
+
+                <TextView
+                    android:id="@+id/tv_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:text=""
+                    android:textColor="#FF0066" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:text="บาท/ต่อ 1 วัน"
+                    android:textColor="#0000CC" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_product_img_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="2dp"
-                android:text="บาท/ต่อ 1 วัน"
-                android:textColor="#0000CC" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_product_img_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:text=""
-            android:textColor="#FF0066"
-            android:visibility="gone"/>
-
-
-        <EditText
-            android:id="@+id/tv_stat_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="วันที่จะใช้รถ"
-            android:gravity="center"
-            android:textColor="#0000CC" />
-
-        <EditText
-            android:id="@+id/tv_end_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="วันที่จะส่งรถคืน"
-            android:gravity="center"
-            android:textColor="#0000CC"
-            android:visibility="gone"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="2dp"
-                android:text="จำนวนวันที่จะเช่า"
-                />
-
-
-
-            <TextView
-                android:id="@+id/tv_NumberPicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:text="1"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                />
-            <NumberPicker
-                android:id="@+id/np"
-                android:layout_width="wrap_content"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
+                android:text=""
                 android:textColor="#FF0066"
-                />
+                android:visibility="gone"/>
 
 
-        </LinearLayout>
-        <EditText
-            android:id="@+id/tv_product_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="amount"
-            android:gravity="center"
-            android:textColor="#0000CC"
-            android:visibility="gone"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/b_Cancel_1"
+            <Spinner
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:id="@+id/driverSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <!--Start-->
+                    <TextView
+                        android:text="(123.45, 123.45)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <!--End-->
+                    <TextView
+                        android:text="(123.45, 123.45)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--Setting-->
+                <Button
+                    android:id="@+id/btnSetMap"
+                    android:layout_weight="1"
+                    android:text="Set Map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/tv_stat_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:ems="10"
-                android:textSize="15dp"
-                android:text="Cancel" />
+                android:hint="วันที่จะใช้รถ"
+                android:gravity="center"
+                android:textColor="#0000CC" />
 
-            <Button
-                android:id="@+id/b_Action_1"
+            <EditText
+                android:id="@+id/tv_end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:ems="10"
-                android:textSize="15dp"
-                android:text="(ยืนยัน)"
-                />
+                android:hint="วันที่จะส่งรถคืน"
+                android:gravity="center"
+                android:textColor="#0000CC"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:text="จำนวนวันที่จะเช่า"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/tv_NumberPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:text="1"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    />
+                <NumberPicker
+                    android:id="@+id/np"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FF0066"
+                    />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/tv_product_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="amount"
+                android:gravity="center"
+                android:textColor="#0000CC"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/b_Cancel_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="Cancel" />
+
+                <Button
+                    android:id="@+id/b_Action_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="(ยืนยัน)"
+                    />
+            </LinearLayout>
+
+
         </LinearLayout>
 
+    </ScrollView>
 
-    </LinearLayout>
 
-</ScrollView>
+
+</LinearLayout>
 

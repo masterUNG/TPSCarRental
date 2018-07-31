@@ -17,16 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //Button
-        Button gotoRegister = (Button) findViewById(R.id.gotoRegister);
-        gotoRegister.setOnClickListener (new View.OnClickListener() {
-
-            public void onClick(View V) {
-                Intent intent =  new Intent(V.getContext(), Register.class);
-                startActivityForResult(intent, 0);
-            }
-
-        });//Button
+        //Register Controller
+        registerController();
 
 
 
@@ -94,6 +86,18 @@ public class MainActivity extends AppCompatActivity {
         }); /////////////// exitApp
 
 
+    }
+
+    private void registerController() {
+        Button gotoRegister = (Button) findViewById(R.id.gotoRegister);
+        gotoRegister.setOnClickListener (new View.OnClickListener() {
+
+            public void onClick(View V) {
+                Intent intent =  new Intent(V.getContext(), Register.class);
+                startActivityForResult(intent, 0);
+            }
+
+        });//Button
     }
 
     /////////////// onBackPressed

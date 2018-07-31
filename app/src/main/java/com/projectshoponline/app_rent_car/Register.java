@@ -6,6 +6,8 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -34,7 +36,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Register extends Activity {
+public class Register extends AppCompatActivity {
 
 
     @SuppressLint("NewApi")
@@ -43,13 +45,49 @@ public class Register extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        // Permission StrictMode
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
+        //Permission StrictMode
+        permissionMode();
 
-        // btnSave
+        //Create Toolbar
+        createToolbar();
+
+        //Save Controller
+        saveController();
+
+
+        //Next Controller
+        nextController();
+
+    }
+
+    private void createToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbarRegister);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Register");
+        getSupportActionBar().setSubtitle("Please Fill All Every Blank");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+    }
+
+    private void nextController() {
+        final Button btnNext = (Button) findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Goto Activity 2
+                Intent newActivity = new Intent(Register.this,Login.class);
+                startActivity(newActivity);
+            }
+        });//*** Button Next
+    }
+
+    private void saveController() {
         final Button btnSave = (Button) findViewById(R.id.btnSave);
         // Perform action on click
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -60,18 +98,13 @@ public class Register extends Activity {
                 }
             }
         });
+    }
 
-
-        //*** Button Next
-        final Button btnNext = (Button) findViewById(R.id.btnNext);
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Goto Activity 2
-                Intent newActivity = new Intent(Register.this,Login.class);
-                startActivity(newActivity);
-            }
-        });//*** Button Next
-
+    private void permissionMode() {
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
     }
 
     public boolean SaveData()

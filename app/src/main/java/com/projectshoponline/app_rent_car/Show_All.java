@@ -59,8 +59,8 @@ public class Show_All extends AppCompatActivity {
         setContentView(R.layout.show_all);
 
         //////////////////
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.hide();
         ////////////////
 
         tv_category_id = (TextView) findViewById(R.id.tv_category_id);
