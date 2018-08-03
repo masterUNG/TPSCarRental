@@ -30,6 +30,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -66,6 +67,8 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 
 
     private String driverIdString;
+    private double[] pointLatDoubles = new double[2];
+    private double[] pointLngDoubles = new double[2];
 
 
     @Override
@@ -215,6 +218,34 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 //            }
 //        });
 
+    }// Main Method
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) { //รับค่า
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        Log.d("3AugV1", "request code ==>" + requestCode);
+        if (requestCode == 500) {
+            pointLatDoubles = data.getDoubleArrayExtra("Lat");
+            pointLngDoubles = data.getDoubleArrayExtra("Long");
+            Log.d("3AugV1", "lastStart ==>" +pointLatDoubles[0]);
+
+            TextView startTextView = findViewById(R.id.txtStart);
+            TextView endTextView = findViewById(R.id.txtEnd);
+
+            startTextView.setText(mySetUpText(pointLatDoubles[0], pointLngDoubles[0]));
+            endTextView.setText(mySetUpText(pointLatDoubles[1],pointLngDoubles[1]));
+        }
+    }
+
+    private String  mySetUpText(double pointLatDouble, double pointLngDouble) {
+
+        String latString = String.format("%.2f",pointLatDouble); //เอาเฉพาะหน้าทศนิยม ข้างหลังตัดหมอด
+        String lngString = String.format("%.2f",pointLngDouble); //เอาเฉพาะหน้าทศนิยม ข้างหลังตัดหมอด
+        String result = "("+latString+", " + lngString +")";
+
+        return result;
     }
 
     private void mapController() {

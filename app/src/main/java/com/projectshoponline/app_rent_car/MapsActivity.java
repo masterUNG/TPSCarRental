@@ -1,6 +1,8 @@
 package com.projectshoponline.app_rent_car;
 
 import android.Manifest;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -9,6 +11,7 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +33,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Criteria criteria;
     private double latADouble, lngADouble;
     private int time = 0;
+    private double[] pointLatDoubles = new double[2];
+    private double[] pointLngDoubles = new double[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,6 +195,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void showAlert() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+        builder.setCancelable(false);
+        builder.setIcon(R.drawable.ic_action_end);
+        builder.setTitle("Confirm Point ?");
+        builder.setMessage("Are you sure ?");
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(MapsActivity.this, DialogActivity_1.class);
+                intent.putExtra("Lat",pointLatDoubles);
+                intent.putExtra("Long", pointLngDoubles);
+                setResult(500,intent);
+             finish();
+            dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.show();
+
     }
 
 
@@ -229,6 +260,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .position(latLng)
                 .icon(BitmapDescriptorFactory.fromResource(intIcon));
         mMap.addMarker(markerOptions);
+
+        pointLatDoubles[time] = latLng.latitude;
+        pointLngDoubles[time] = latLng.longitude;
     }
 
 }
