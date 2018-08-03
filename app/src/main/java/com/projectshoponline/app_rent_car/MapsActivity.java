@@ -10,12 +10,16 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -25,6 +29,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationManager locationManager;
     private Criteria criteria;
     private double latADouble, lngADouble;
+    private int time = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,5 +160,75 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centrLatLng, 16)); //16 คือขนาด zoom
 
         }
+        mapController();
+
+        //Clear Controller
+        clearController();
+
+//        confirmController
+        confirmController();
+
+
+    } // onMapReady
+
+    private void confirmController() {
+        Button button = findViewById(R.id.btnConfirm);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (time >= 2) {
+//                    confirm
+                    showAlert();
+
+                } else {
+                    Toast.makeText(MapsActivity.this, "Please Point Start And End!",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
+    private void showAlert() {
+    }
+
+
+    private void clearController() {
+        Button button = findViewById(R.id.btnClear);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                time = 0;
+                mMap.clear();
+            }
+        });
+    }
+
+    private void mapController() {
+
+        final int[] ints = new int[]{R.drawable.ic_action_start, R.drawable.ic_action_end};
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+
+                if (time <= 1) {
+                    createMarker(latLng, ints[time]);
+
+
+                }
+
+
+                time+=1;
+            }
+        });
+    }
+
+    private void createMarker(LatLng latLng, int intIcon) {
+        MarkerOptions markerOptions = new MarkerOptions()
+                .position(latLng)
+                .icon(BitmapDescriptorFactory.fromResource(intIcon));
+        mMap.addMarker(markerOptions);
+    }
+
 }

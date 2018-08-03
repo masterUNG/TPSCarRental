@@ -2,10 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-
     /////
     useLibrary 'org.apache.http.legacy'
-
     defaultConfig {
         applicationId "com.projectshoponline.app_rent_car"
         minSdkVersion 15
@@ -20,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
