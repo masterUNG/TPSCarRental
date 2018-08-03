@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/bg_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
     <TextView
 
         android:layout_width="wrap_content"
@@ -14,6 +22,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
     <EditText
+        android:background="@drawable/user_textfield"
         android:id="@+id/txtUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,6 +32,7 @@
         android:hint="บัญชีผู้ใช้งาน" />
 
     <EditText
+        android:background="@drawable/password_textfield"
         android:id="@+id/txtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,10 +46,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:background="@color/colorPrimary"
-        android:ems="15"
+        android:background="@drawable/bg_button"
         android:text="เข้าสู่ระบบ"
         android:textAppearance="@android:style/TextAppearance.Inverse" />
 
@@ -48,13 +55,10 @@
         android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:background="@color/colorPrimary"
-        android:ems="15"
+        android:background="@drawable/bg_button"
         android:text="กลับสู่หน้าหลัก"
         android:textAppearance="@android:style/TextAppearance.Inverse" />
-
+    </LinearLayout>
 
 </LinearLayout>
 

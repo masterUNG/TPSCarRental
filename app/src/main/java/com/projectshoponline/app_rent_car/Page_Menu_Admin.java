@@ -57,39 +57,9 @@ public class Page_Menu_Admin extends AppCompatActivity{
         //*** Show User Info
         showUserLoginInfo();
 
+//        Report Controller
+        reportController();
 
-//        //*** Button Logout
-//        final Button b_Show_Place = (Button) findViewById(R.id.b_Show_Place);
-//        b_Show_Place.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//
-//                // Goto Acitity2
-//                Intent newActivity = new Intent(Page_Menu.this,Show_Place.class);
-//                startActivity(newActivity);
-//            }
-//        });
-//
-//        //*** Button Logout
-//        final Button b_Add_Place = (Button) findViewById(R.id.b_add_Place);
-//        b_Add_Place.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//
-//                // Goto Acitity2
-//                Intent newActivity = new Intent(Page_Menu.this,Page_Add_Upload_Image.class);
-//                startActivity(newActivity);
-//            }
-//        });
-//        //*** Button Next
-//        final Button b_My_Profile= (Button) findViewById(R.id.b_My_Profile);
-//        b_My_Profile.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                // Goto Activity 2
-//                Intent newActivity = new Intent(Page_Menu_Admin.this, My_Profile.class);
-//                startActivity(newActivity);
-//            }
-//        });
 
         //*** Button Next
         final Button b_Page_Spinner_Category= (Button) findViewById(R.id.b_Page_Spinner_Category);
@@ -226,6 +196,18 @@ public class Page_Menu_Admin extends AppCompatActivity{
         }); /////////////// exitApp
 
     }
+
+    private void reportController() {
+        Button button = findViewById(R.id.btnReport);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Page_Menu_Admin.this, ReportMain2Activity.class) ;
+                startActivity(intent);
+            }
+        });
+    }
+
     /////////////// onBackPressed
     public void onBackPressed() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);

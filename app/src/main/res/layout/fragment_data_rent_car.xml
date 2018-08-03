@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Toolbar-->
+    <include layout="@layout/toolbar_main" android:id="@+id/toolbarDataRentCar"/>
+
+    <!--Choose Date-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Start-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtShowStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="Start Date"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/h1"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnSetStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="Set Stat"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <!--End-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtShowEnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="End Date"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/h1"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="Set End"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+
+        <!--Update-->
+        <Button
+            android:id="@+id/btnSetEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="Update"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+    <!--RecycleView-->
+
+</LinearLayout>
