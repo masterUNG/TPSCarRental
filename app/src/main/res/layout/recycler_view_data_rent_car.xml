@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Item-->
+    <TextView
+        android:id="@+id/txtItem"
+        android:gravity="clip_horizontal"
+        android:textSize="18sp"
+        android:text="12"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <!--Name And Surname-->
+    <TextView
+        android:id="@+id/txtNameAndSur"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="Name SurName"
+        android:layout_weight="5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <!--Product Name-->
+    <TextView
+        android:id="@+id/txtProductName"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="Product Name"
+        android:layout_weight="5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <!--Start Date-->
+    <TextView
+        android:id="@+id/txtStart"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="2018-04-05"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+
+    <!-- Amount-->
+    <TextView
+        android:id="@+id/txtAmount"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="12"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+</LinearLayout>

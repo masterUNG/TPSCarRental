@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!--Toolbar-->
-    <include layout="@layout/toolbar_main" android:id="@+id/toolbarDataRentCar"/>
+    <include
+        android:id="@+id/toolbarDataRentCar"
+        layout="@layout/toolbar_main" />
 
     <!--Choose Date-->
     <LinearLayout
+        android:gravity="center"
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_clear"
         android:orientation="vertical">
+
 
         <!--Start-->
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -23,7 +31,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
+                android:layout_weight="1.2"
                 android:gravity="center_horizontal"
                 android:text="Start Date"
                 android:textColor="@color/colorPrimary"
@@ -52,7 +60,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
+                android:layout_weight="1.2"
                 android:gravity="center_horizontal"
                 android:text="End Date"
                 android:textColor="@color/colorPrimary"
@@ -60,6 +68,7 @@
                 android:textStyle="bold" />
 
             <Button
+                android:id="@+id/btnSetEnd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -72,7 +81,7 @@
 
         <!--Update-->
         <Button
-            android:id="@+id/btnSetEnd"
+            android:id="@+id/btnUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
@@ -80,6 +89,6 @@
             android:textColor="#FFFFFF" />
 
     </LinearLayout>
-    <!--RecycleView-->
 
-</LinearLayout>
+
+</RelativeLayout>

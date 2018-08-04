@@ -1,16 +1,19 @@
 package com.projectshoponline.app_rent_car;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,8 +24,8 @@ import java.util.Date;
 public class DataRentCarFragment extends Fragment{
 
     private int yearCurrentAnInt, monthCurrentAnInt, dayCurrentAnInt;
-    private int yearStartAnInt, monthStartAnInt, dayStartAnInt;
-    private int yearEndAnInt, monthEndAnInt, dayEndAnInt;
+    private String startString, endString;
+    private boolean startABoolean = true, endABoolean = true;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -37,7 +40,61 @@ public class DataRentCarFragment extends Fragment{
 //        Setstart Controller
         setStartController();
 
+//        SetEnd Controller
+        setEndController();
+
+//        Update Controller
+        updateController();
+
     }// Main Method
+
+    private void updateController() {
+        Button button = getView().findViewById(R.id.btnUpdate);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (startABoolean || endABoolean) {
+
+                    Toast.makeText(getActivity(),
+                            "Please Setup Start And End Date", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    reportData();
+                }
+
+            }
+        });
+    }
+
+    private void reportData() {
+
+        Intent intent = new Intent(getActivity(), ListRentCarActivity.class);
+        intent.putExtra("Start", startString);
+        intent.putExtra("End", endString);
+        startActivity(intent);
+    }
+
+    private void setEndController() {
+        Button button = getView().findViewById(R.id.btnSetEnd);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                showENd(year,month, dayOfMonth);
+                                endABoolean = false;
+                            }
+                        },yearCurrentAnInt,monthCurrentAnInt,dayCurrentAnInt);
+                datePickerDialog.show();
+            }
+        });
+    }
 
     private void getCurrentTime() {
         Calendar calendar = Calendar.getInstance();
@@ -51,11 +108,14 @@ public class DataRentCarFragment extends Fragment{
        button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
+
                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
                        new DatePickerDialog.OnDateSetListener() {
                            @Override
                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                                showStart(year,month, dayOfMonth);
+                               startABoolean = false;
                            }
                        },yearCurrentAnInt,monthCurrentAnInt,dayCurrentAnInt);
                datePickerDialog.show();
@@ -72,9 +132,23 @@ public class DataRentCarFragment extends Fragment{
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-
         String startDate = dateFormat.format(calendar.getTime());
         textView.setText(startDate);
+        startString = startDate;
+    }
+
+    private void showENd(int year, int month, int dayOfMonth) {
+        TextView textView = getView().findViewById(R.id.txtShowEnd);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, dayOfMonth);
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+
+        String endDate = dateFormat.format(calendar.getTime());
+        textView.setText(endDate);
+        endString = endDate;
     }
 
     private void createToolbar() {
