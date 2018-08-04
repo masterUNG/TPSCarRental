@@ -18,6 +18,7 @@
         android:orientation="vertical">
 
         <Button
+
             android:id="@+id/btnDataRentCar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,10 +27,11 @@
             android:textColor="#FFFFFF" />
 
         <Button
+            android:id="@+id/btnCountCar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:text=""
+            android:text="@string/count_car"
             android:textColor="#FFFFFF" />
 
         <Button
