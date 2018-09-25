@@ -95,7 +95,7 @@ public class Show_Category extends AppCompatActivity {
 
 
         //String ip = "nap21.fulba.com";
-        String url = "http://projectshoponline.com/rentcar/app_show_category.php";
+        String url = "http://androidthai.in.th/nor/rentcar_json/app_show_category.php";
         // Paste Parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         try {

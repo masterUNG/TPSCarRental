@@ -249,7 +249,7 @@ public class Page_Menu_Admin extends AppCompatActivity{
 
 
 
-        String url = "http://projectshoponline.com/rentcar/app_get_admin_id.php";
+        String url = "http://androidthai.in.th/nor/rentcar_json/app_get_admin_id.php";
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("sMemberID", strMemberID));

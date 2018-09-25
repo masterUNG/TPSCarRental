@@ -56,7 +56,7 @@ public class Add_Car extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CODE = 1;
     private static final int PICK_IMAGE_REQUEST= 99;
     Bitmap bitmap;
-    String myurl = "http://projectshoponline.com/rentcar/app_add_car.php";
+    String myurl = "http://androidthai.in.th/nor/rentcar_json/app_add_car.php";
 
 
     TextView tvView1;
@@ -93,11 +93,16 @@ public class Add_Car extends AppCompatActivity {
 
     /////////////
     Spinner spinner1;
+    Spinner spinner2;
+    Spinner spinner3;
 
     public static ArrayList<String> Service_Id = null;
 
     public static ArrayList<String> Service1 = null;
     public static ArrayList<String> Service2 = null;
+    public static ArrayList<String> Service3 = null;
+    public static ArrayList<String> Service4 = null;
+    public static ArrayList<String> Service5 = null;
 
     public static ArrayList<String> Service_new= null;
 
@@ -174,6 +179,7 @@ public class Add_Car extends AppCompatActivity {
         txtCar_horse_power = (EditText)findViewById(R.id.txtCar_horse_power);
         txtCar_weight = (EditText)findViewById(R.id.txtCar_weight);
         txtCar_fuel_tank = (EditText)findViewById(R.id.txtCar_fuel_tank);
+
 
 
 
@@ -279,6 +285,8 @@ public class Add_Car extends AppCompatActivity {
         //////////////////////////////////////////////////////////////////
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        spinner3 = (Spinner) findViewById(R.id.spinner3);
 
 //        //*** Button Next
 //        final Button b_action_1 = (Button) findViewById(R.id.b_action_1);
@@ -297,6 +305,9 @@ public class Add_Car extends AppCompatActivity {
         Service_Id = new ArrayList<String>();
         Service1 = new ArrayList<String>();
         Service2 = new ArrayList<String>();
+        Service3 = new ArrayList<String>();
+        Service4 = new ArrayList<String>();
+        Service5 = new ArrayList<String>();
         Service_new = new ArrayList<String>();
 
 
@@ -335,7 +346,43 @@ public class Add_Car extends AppCompatActivity {
             }
         });
 
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(Add_Car.this,Service_Id.get(position),Toast.LENGTH_LONG).show();
+                txtPassword.setText(Service4.get(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(Add_Car.this,Service_Id.get(position),Toast.LENGTH_LONG).show();
+                txtCar_brand.setText(Service5.get(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+
+
+
         getData();
+        getData2();
+        getData3();
+
+
+
+
     }
 
 
@@ -351,25 +398,15 @@ public class Add_Car extends AppCompatActivity {
                     for (int i = 0; i <= jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
-
                         service_id =jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_ID);
-                        String service1 = jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT1);
-                        String service2 = jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT2);
-                        //String service_new = jsonObject1.getString(Config.SPINNER_TEXT1)+(Config.SPINNER_TEXT2);
-
                         Service_Id.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_ID));
-                        // Service_Id.add(jsonObject1.getString(Config.SPINNER_ID));
 
                         Service1.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT1));
                         Service2.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT2));
+//                        Service3.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT3));
 
-                        // Service_new.add((jsonObject1.getString(Config.SPINNER_TEXT1)+"").add(jsonObject1.getString(Config.SPINNER_TEXT2));
-
-                        //String S_New = (""+Service1 +""+ Service1);
-                        //Service_new.add(jsonObject1.getString(Config.SPINNER_ID)+(Config.SPINNER_TEXT));
-                        // Service.add("Please select Work Department");
-                        spinner1.setPrompt("Please select Work Department");
                         spinner1.setAdapter(new ArrayAdapter<String>(Add_Car.this, android.R.layout.simple_dropdown_item_1line, Service1));
+//                        spinner2.setAdapter(new ArrayAdapter<String>(Add_Car.this, android.R.layout.simple_dropdown_item_1line, Service3));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -388,8 +425,77 @@ public class Add_Car extends AppCompatActivity {
         //  }
 
 
+    } // # End of getData
 
-    }
+    private void getData2() {
+        StringRequest stringRequest = new StringRequest(Page_Spinner_Category_Config.MODEL_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                JSONObject jsonObject;
+                try {
+                    jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("Service");
+                    Log.e("onResponse: ", jsonObject + "");
+                    for (int i = 0; i <= jsonArray.length(); i++) {
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
+
+                        Service4.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT4));
+                        spinner2.setAdapter(new ArrayAdapter<String>(Add_Car.this, android.R.layout.simple_dropdown_item_1line, Service4));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        com.android.volley.RequestQueue requestQueue = Volley.newRequestQueue(this);
+        //RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+        //  }
+
+
+    } // # End of getData2
+
+    private void getData3() {
+        StringRequest stringRequest = new StringRequest(Page_Spinner_Category_Config.BRAND_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                JSONObject jsonObject;
+                try {
+                    jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("Service");
+                    Log.e("onResponse: ", jsonObject + "");
+                    for (int i = 0; i <= jsonArray.length(); i++) {
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
+
+                        Service5.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT5));
+                        spinner3.setAdapter(new ArrayAdapter<String>(Add_Car.this, android.R.layout.simple_dropdown_item_1line, Service5));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        com.android.volley.RequestQueue requestQueue = Volley.newRequestQueue(this);
+        //RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+        //  }
+
+
+    } // # End of getData3
 
     private void requestPermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(Add_Car.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {

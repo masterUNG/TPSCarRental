@@ -61,7 +61,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
             android:text="รถที่พร้อมให้บริการ"
-            android:textAppearance="@android:style/TextAppearance.Inverse" />
+            android:textAppearance="@android:style/TextAppearance.Inverse"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/b_Add_Car"
@@ -84,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:text="ออกรายงน"
+            android:text="ออกรายงาน"
             android:textAppearance="@android:style/TextAppearance.Inverse" />
 
         <Button
@@ -102,7 +103,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
             android:text="ออกจากแอพลิเคชั่น"
-            android:textAppearance="@android:style/TextAppearance.Inverse" />
+            android:textAppearance="@android:style/TextAppearance.Inverse"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

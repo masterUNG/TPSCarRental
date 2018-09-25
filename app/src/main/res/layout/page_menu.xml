@@ -93,7 +93,8 @@
             android:background="@color/colorPrimary"
             android:ems="15"
             android:text="ออกจากแอพลิเคชั่น"
-            android:textAppearance="@android:style/TextAppearance.Inverse" />
+            android:textAppearance="@android:style/TextAppearance.Inverse"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

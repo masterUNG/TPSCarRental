@@ -120,7 +120,7 @@ public class Show_Order_All extends AppCompatActivity {
         //String ip = "nap21.fulba.com";
        // String url = "http://projectshoponline.com/rentcar/app_get_all_orders_by_user.php?user_id="+strMemberID;
 
-        String url = "http://projectshoponline.com/rentcar/app_get_all_orders.php";
+        String url = "http://androidthai.in.th/nor/rentcar_json/app_get_all_orders.php";
         // Paste Parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         try {
@@ -222,7 +222,7 @@ public class Show_Order_All extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
 
 
-                            String url = "http://projectshoponline.com/rentcar/app_get_delete_orders.php";
+                            String url = "http://androidthai.in.th/nor/rentcar_json/app_get_delete_orders.php";
                             List<NameValuePair> params = new ArrayList<NameValuePair>();
                             params.add(new BasicNameValuePair("order_id", MyArrList.get(position).get("order_id")));
 

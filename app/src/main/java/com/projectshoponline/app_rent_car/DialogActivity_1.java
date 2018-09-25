@@ -261,7 +261,7 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 
     private void createSpinner() {
         Spinner spinner = findViewById(R.id.driverSpinner);
-        String urlJSON = "http://projectshoponline.com/rentcar/getAllDriver.php";
+        String urlJSON = "http://androidthai.in.th/nor/rentcar_json/getAllDriver.php";
 
         try {
             ReadAllDataFromServer readAllDataFromServer = new ReadAllDataFromServer(DialogActivity_1.this);
@@ -352,7 +352,7 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 
                     // Toast.makeText(getApplicationContext(), "is not empty", Toast.LENGTH_SHORT).show();
 
-                    poster = new MyHttpPoster("http://projectshoponline.com/rentcar/app_add_order.php");
+                    poster = new MyHttpPoster("http://androidthai.in.th/nor/rentcar_json/app_add_order.php");
 
                     ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
 

@@ -239,7 +239,7 @@ public class Page_Menu extends AppCompatActivity{
 
 
 
-        String url = "http://projectshoponline.com/rentcar/app_get_user_id.php";
+        String url = "http://androidthai.in.th/nor/rentcar_json/app_get_user_id.php";
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("sMemberID", strMemberID));

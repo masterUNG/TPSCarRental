@@ -63,7 +63,7 @@ public class Login_Admin extends Activity {
 
 
 
-                String url = "http://projectshoponline.com/rentcar/app_login_admin.php";
+                String url = "http://androidthai.in.th/nor/rentcar_json/app_login_admin.php";
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
                 params.add(new BasicNameValuePair("strUser", txtUser.getText().toString()));

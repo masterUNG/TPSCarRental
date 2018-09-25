@@ -72,7 +72,7 @@ public class My_Profile extends Activity {
 
 
         //String url = "http://projectappnew.com/web2/app/get_MemberID.php";
-        String url = "http://projectshoponline.com/rentcar/app_my_profile.php?user_id="+ strMemberID;
+        String url = "http://androidthai.in.th/nor/rentcar_json/app_my_profile.php?user_id="+ strMemberID;
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("sMemberID", strMemberID));

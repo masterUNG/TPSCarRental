@@ -117,7 +117,7 @@ public class Show_All extends AppCompatActivity {
       //  String ip = "nap21.fulba.com";
        // String url = "http://"+ip+"/json/showAllDatapy.php";
        // String url = "http://projectshoponline.com/rentcar/app_show_category.php";
-        String url = "http://projectshoponline.com/rentcar/app_show_all.php?category_id="+ s_category_id;
+        String url = "http://androidthai.in.th/nor/rentcar_json/app_show_all.php?category_id="+ s_category_id;
 
         // Paste Parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();

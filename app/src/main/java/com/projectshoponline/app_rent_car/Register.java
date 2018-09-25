@@ -199,7 +199,7 @@ public class Register extends AppCompatActivity {
 
 
 
-        String url = "http://projectshoponline.com/rentcar/app_register.php";
+        String url = "http://androidthai.in.th/nor/rentcar_json/app_register.php";
 
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
