@@ -1,4 +1,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -13,197 +15,333 @@
         android:weightSum="1">
 
 
+
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="Add Car"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/textCarCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Category: "
+                android:visibility="visible" />
+
             <Spinner
                 android:id="@+id/spinner1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="37dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textCarBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Model: "
                 android:visibility="visible" />
 
             <Spinner
                 android:id="@+id/spinner3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="37dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:visibility="visible" />
 
+            <TextView
+                android:id="@+id/textCarModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Model: "
+                android:visibility="visible" />
 
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="37dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/txtUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="category"
+                android:padding="10dp"
+                android:textColor="#FF0066"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/txtCar_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="ยี่ห้อรถ"
+                android:padding="10dp"
+                android:textColor="#FF0066"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="รุ่นรถ"
+                android:padding="10dp"
+                android:textColor="#FF0066"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textCarColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Color: "
                 android:visibility="visible" />
 
 
+            <EditText
+                android:id="@+id/txtCar_color"
+                android:layout_width="355dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Car Color"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/txtCar_cylinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="กระบอกสูบ (cc)"
+                android:padding="10dp"
+                android:textColor="#FF0066"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/txtCar_horse_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="แรงม้า (hp)"
+                android:padding="10dp"
+                android:textColor="#FF0066"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/txtCar_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="น้ำหนัก (กิโลกรัม)"
+                android:padding="10dp"
+                android:textColor="#FF0066"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/txtCar_fuel_tank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="ความจุน้ำมัน (ลิตร)"
+                android:padding="10dp"
+                android:textColor="#FF0066"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textCarDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Detail: "
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/txtAddress"
+                android:layout_width="355dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Car Detail"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textCarPlate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Plate: "
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/txtCar_register_number"
+                android:layout_width="355dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Car Plate"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textCarBodyNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Body Number: "
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/txtCar_body_number"
+                android:layout_width="355dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Car Body Number"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textCarPolicyNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Policy Number: "
+                android:visibility="visible" />
+
+
+            <EditText
+                android:id="@+id/txtPolicy_number"
+                android:layout_width="355dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Car Policy Number (Insurance)"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textCarPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Car Price (Baht): "
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="355dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Car Price (Baht)"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+
+
         </LinearLayout>
-        <EditText
-            android:id="@+id/txtUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:textColor="#FF0066"
-            android:ems="10"
-            android:padding="10dp"
-            android:gravity="center"
-            android:hint="category"
-            android:visibility="gone"
-            />
 
-        <EditText
-            android:id="@+id/txtCar_brand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="ยี่ห้อรถ"
-            android:padding="10dp"
-            android:textColor="#FF0066"
-            android:visibility="gone"/>
 
-        <EditText
-            android:id="@+id/txtPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="รุ่นรถ"
-            android:padding="10dp"
-            android:textColor="#FF0066"
-            android:visibility="gone"/>
 
-        <EditText
-            android:id="@+id/txtCar_color"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="สีรถ"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
 
-        <EditText
-            android:id="@+id/txtCar_cylinder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="กระบอกสูบ (cc)"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
 
-        <EditText
-            android:id="@+id/txtCar_horse_power"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="แรงม้า (hp)"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="40dp"-->
+            <!--android:orientation="horizontal">-->
 
-        <EditText
-            android:id="@+id/txtCar_weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="น้ำหนัก (กิโลกรัม)"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
+            <!--<TextView-->
+                <!--android:id="@+id/textView3"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="TextView" />-->
 
-        <EditText
-            android:id="@+id/txtCar_fuel_tank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="ความจุน้ำมัน (ลิตร)"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
+            <!--<Spinner-->
+                <!--android:id="@+id/spinner2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:visibility="visible" />-->
 
-        <EditText
-            android:id="@+id/txtAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="รายละเอียด"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
+        <!--</LinearLayout>-->
 
-        <EditText
-            android:id="@+id/txtCar_register_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="เลขทะเบียนรถ"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
-
-        <EditText
-            android:id="@+id/txtCar_body_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="เลขที่ตัวถังรถ"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
-
-        <EditText
-            android:id="@+id/txtPolicy_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="เลขที่กรมธรรม์ประกันภัย"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
-
-        <EditText
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="ราคาค่าเช่า (บาท)"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="#FF0066" />
 
         <Button
             android:id="@+id/b_select_Image"
@@ -214,7 +352,7 @@
             android:background="@color/colorPrimary"
             android:ems="15"
             android:padding="20dp"
-            android:text="รูปภาพ"
+            android:text="Image"
             android:textAppearance="@android:style/TextAppearance.Inverse" />
 
         <ImageView
@@ -232,9 +370,8 @@
             android:background="@color/colorPrimary"
             android:ems="15"
             android:padding="20dp"
-            android:text="เพิ่มรถ"
+            android:text="Add Car"
             android:textAppearance="@android:style/TextAppearance.Inverse" />
-
     </LinearLayout>
 </ScrollView>
 

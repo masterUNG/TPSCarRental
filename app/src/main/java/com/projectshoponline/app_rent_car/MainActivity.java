@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });//Button
+
+
+
+        //Text View (Click to login Administrator)
+        TextView goto_administrator = (TextView) findViewById(R.id.goto_administrator);
+        goto_administrator.setOnClickListener (new View.OnClickListener() {
+
+            public void onClick(View V) {
+                Intent intent =  new Intent(V.getContext(), Login_Admin.class);
+                startActivityForResult(intent, 0);
+            }
+
+        });//Text View (Click to login Administrator)
+
+
 
 
 

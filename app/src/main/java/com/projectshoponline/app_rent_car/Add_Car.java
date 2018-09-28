@@ -97,6 +97,8 @@ public class Add_Car extends AppCompatActivity {
     Spinner spinner3;
 
     public static ArrayList<String> Service_Id = null;
+    public static ArrayList<String> Service_Id_4 = null;
+    public static ArrayList<String> Service_Id_5 = null;
 
     public static ArrayList<String> Service1 = null;
     public static ArrayList<String> Service2 = null;
@@ -106,7 +108,7 @@ public class Add_Car extends AppCompatActivity {
 
     public static ArrayList<String> Service_new= null;
 
-    String service_id;
+    String service_id,service_id_4,service_id_5;
     String S_New;
 
 
@@ -281,7 +283,7 @@ public class Add_Car extends AppCompatActivity {
         }
 
 
-       // etView1 = (EditText) findViewById(R.id.etView1);
+        // etView1 = (EditText) findViewById(R.id.etView1);
         //////////////////////////////////////////////////////////////////
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
@@ -303,6 +305,8 @@ public class Add_Car extends AppCompatActivity {
 
 
         Service_Id = new ArrayList<String>();
+        Service_Id_4 = new ArrayList<String>();
+        Service_Id_5 = new ArrayList<String>();
         Service1 = new ArrayList<String>();
         Service2 = new ArrayList<String>();
         Service3 = new ArrayList<String>();
@@ -314,7 +318,8 @@ public class Add_Car extends AppCompatActivity {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Add_Car.this,Service_Id.get(position),Toast.LENGTH_LONG).show();
+                // แสดงข้อความ id เมื่อเลือก
+                // Toast.makeText(Add_Car.this,Service_Id.get(position),Toast.LENGTH_LONG).show();
 
 
                 txtUsername.setText(Service_Id.get(position).toString());
@@ -350,7 +355,11 @@ public class Add_Car extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(Add_Car.this,Service_Id.get(position),Toast.LENGTH_LONG).show();
-                txtPassword.setText(Service4.get(position).toString());
+
+
+
+//                txtPassword.setText(Service4.get(position).toString()); //เอาข้อความ มาบันทึกลง Database
+                txtPassword.setText(Service_Id_4.get(position).toString()); //ตัวเลข id มาบันทึกลงใน Database
             }
 
             @Override
@@ -364,7 +373,10 @@ public class Add_Car extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(Add_Car.this,Service_Id.get(position),Toast.LENGTH_LONG).show();
-                txtCar_brand.setText(Service5.get(position).toString());
+
+
+//                txtCar_brand.setText(Service5.get(position).toString()); //เอาข้อความ มาบันทึกลง Database
+                txtCar_brand.setText(Service_Id_5.get(position).toString()); //ตัวเลข id มาบันทึกลงใน Database
             }
 
             @Override
@@ -439,6 +451,9 @@ public class Add_Car extends AppCompatActivity {
                     for (int i = 0; i <= jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
+                        service_id_4 =jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT4_ID);
+                        Service_Id_4.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT4_ID));
+
 
                         Service4.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT4));
                         spinner2.setAdapter(new ArrayAdapter<String>(Add_Car.this, android.R.layout.simple_dropdown_item_1line, Service4));
@@ -473,6 +488,9 @@ public class Add_Car extends AppCompatActivity {
                     Log.e("onResponse: ", jsonObject + "");
                     for (int i = 0; i <= jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
+                        service_id_5 =jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT5_ID);
+                        Service_Id_5.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT5_ID));
 
 
                         Service5.add(jsonObject1.getString(Page_Spinner_Category_Config.SPINNER_TEXT5));

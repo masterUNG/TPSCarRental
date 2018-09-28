@@ -136,9 +136,9 @@ public class Page_Order extends AppCompatActivity {
 
                 map = new HashMap<String, String>();
                 map.put("order_id", c.getString("order_id"));
-                map.put("order_product_id", c.getString("order_product_id"));
-                map.put("order_product_name", c.getString("order_product_name"));
-                map.put("order_product_img", c.getString("order_product_img"));
+                map.put("brand_id", c.getString("brand_id"));
+                map.put("model_name", c.getString("model_name"));
+                map.put("car_img", c.getString("car_img"));
 
                 MyArrList.add(map);
 
@@ -214,7 +214,7 @@ public class Page_Order extends AppCompatActivity {
             cmdDelete.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     adb1.setTitle("Delete?");
-                    adb1.setMessage("Are you sure delete [" + MyArrList.get(position).get("order_product_name") + "]");
+                    adb1.setMessage("Are you sure delete [" + MyArrList.get(position).get("model_name") + "]");
                     adb1.setNegativeButton("Cancel", null);
                     adb1.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -262,19 +262,20 @@ public class Page_Order extends AppCompatActivity {
             // R.id.
             TextView txt_id = (TextView) convertView.findViewById(R.id.txt_id);
             txt_id.setPadding(10, 0, 0, 0);
-            txt_id.setText(MyArrList.get(position).get("order_product_id") + ".");
+            txt_id.setText(MyArrList.get(position).get("order_id") + ".");
 
             // R.id.
             TextView txt1 = (TextView) convertView.findViewById(R.id.txt1);
             txt1.setPadding(5, 0, 0, 0);
-            txt1.setText(MyArrList.get(position).get("order_product_name") + ".");
+//            txt1.setText(MyArrList.get(position).get("order_product_name") + ".");
+            txt1.setText(MyArrList.get(position).get("model_name"));
 
             // ImageView imgview1 = (ImageView) convertView.findViewById(R.id.image1);
             imgview1 = (ImageView) convertView.findViewById(R.id.image1);
 
 
             Picasso.with(Page_Order.this)
-                    .load(""+MyArrList.get(position).get("order_product_img"))
+                    .load(""+MyArrList.get(position).get("car_img"))
                     // .placeholder(R.drawable.placeholder)   // optional
                     //.error(R.drawable.error)      // optional
                     //.resize(400,400)                        // optional

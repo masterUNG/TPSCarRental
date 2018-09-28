@@ -44,6 +44,7 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
     TextView tv_product_name;
     TextView tv_product_price;
     TextView tv_product_img_1;
+    TextView tv_car_seat_number;
     TextView tv_stat_time;
     TextView tv_end_time;
 
@@ -105,6 +106,7 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
         tv_product_id = (TextView) findViewById(R.id.tv_product_id);
         tv_product_name = (TextView) findViewById(R.id.tv_product_name);
         tv_product_price = (TextView) findViewById(R.id.tv_product_price);
+        tv_car_seat_number = (TextView) findViewById(R.id.tv_car_seat_number);
         tv_product_img_1 = (TextView) findViewById(R.id.tv_product_img_1);
         tv_product_amount = (TextView) findViewById(R.id.tv_product_amount);
        // tv_stat_time = (TextView) findViewById(R.id.tv_stat_time);
@@ -142,10 +144,11 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
         //////////////////
 
         final Intent intent = getIntent();
-        String s_ID = intent.getStringExtra("product_id");
-        String s_NAME = intent.getStringExtra("product_name");
-        String s_PRICE = intent.getStringExtra("product_price");
-        String s_IMAGE = intent.getStringExtra("product_img_1");
+        String s_ID = intent.getStringExtra("detail_id");
+        String s_NAME = intent.getStringExtra("car_detail");
+        String s_PRICE = intent.getStringExtra("car_price");
+        String s_IMAGE = intent.getStringExtra("car_img");
+        String s_CAR_SEAT_NUMBER = intent.getStringExtra("car_seat_number");
 
 
        // New_String_product_img_1 = intent.getStringExtra("product_img_1");
@@ -154,6 +157,7 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
         tv_product_name.setText("" + s_NAME);
         tv_product_price.setText("" + s_PRICE);
         tv_product_img_1.setText("" + s_IMAGE);
+        tv_car_seat_number.setText("" + s_CAR_SEAT_NUMBER);
         /////////////////////////////////////
 
         imgview1 = (ImageView) findViewById(R.id.image1);
@@ -397,8 +401,12 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 
                     });
 
-                    showToastMessage("Ok");
+                    showToastMessage("Booking Success");
                     this.finish();
+
+
+                    Intent intent = new Intent(this, Page_Menu.class);
+                    startActivity(intent);
                 }
 
 

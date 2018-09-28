@@ -60,8 +60,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="2dp"
-                    android:text="ราคาเช่า"
-                    android:textColor="#0000CC" />
+                    android:text="Price"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/tv_product_price"
@@ -78,8 +78,43 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="2dp"
-                    android:text="บาท/ต่อ 1 วัน"
-                    android:textColor="#0000CC" />
+                    android:text="Baht / Day"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:text="Number Of Seat"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tv_car_seat_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:text=""
+                    android:textColor="#FF0066" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:text="Seat"
+                    android:textColor="#000000" />
             </LinearLayout>
 
             <TextView
@@ -150,8 +185,8 @@
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:ems="10"
-                android:hint="วันที่จะใช้รถ"
                 android:gravity="center"
+                android:hint="Days to use the car"
                 android:textColor="#0000CC" />
 
             <EditText
@@ -179,8 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="2dp"
-                    android:text="จำนวนวันที่จะเช่า"
-                    />
+                    android:text="Number of days to rent " />
 
 
 
@@ -233,10 +267,9 @@
                     android:id="@+id/b_Action_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                    android:textSize="15dp"
-                    android:text="(ยืนยัน)"
-                    />
+                    android:layout_weight="1"
+                    android:text="Book Now"
+                    android:textSize="15dp" />
             </LinearLayout>
 
 

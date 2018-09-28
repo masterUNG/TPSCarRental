@@ -135,10 +135,15 @@ public class Show_All extends AppCompatActivity {
 
 
                 map = new HashMap<String, String>();
-                map.put("product_id", c.getString("product_id"));
-                map.put("product_name", c.getString("product_name"));
-                map.put("product_price", c.getString("product_price"));
-                map.put("product_img_1", c.getString("product_img_1"));
+                map.put("detail_id", c.getString("detail_id"));
+                map.put("car_detail", c.getString("car_detail"));
+                map.put("car_price", c.getString("car_price"));
+                map.put("car_img", c.getString("car_img"));
+
+                map.put("car_seat_number", c.getString("car_seat_number"));
+                map.put("car_cylinder", c.getString("car_cylinder"));
+                map.put("car_horse_power", c.getString("car_horse_power"));
+
 
 
 
@@ -153,23 +158,39 @@ public class Show_All extends AppCompatActivity {
                                         int position, long mylng) {
 
 
-                    String s_ID = MyArrList.get(position).get("product_id")
+                    String s_ID = MyArrList.get(position).get("detail_id")
                             .toString();
 
-                    String s_NAME = MyArrList.get(position).get("product_name")
+                    String s_NAME = MyArrList.get(position).get("car_detail")
                             .toString();
 
-                    String s_PRICE = MyArrList.get(position).get("product_price")
+                    String s_PRICE = MyArrList.get(position).get("car_price")
                             .toString();
 
-                    String s_IMAGE = MyArrList.get(position).get("product_img_1")
+                    String s_IMAGE = MyArrList.get(position).get("car_img")
                             .toString();
+
+                    String s_CAR_SEAT_NUMBER = MyArrList.get(position).get("car_seat_number")
+                            .toString();
+
+                    String s_CAR_CYLINDER = MyArrList.get(position).get("car_cylinder")
+                            .toString();
+
+                    String s_CAR_HORSE_POWER = MyArrList.get(position).get("car_horse_power")
+                            .toString();
+
+
                     Intent newActivity = new Intent(Show_All.this,Show_Detail_And_Rent.class);
                    // newActivity.putExtra("category_id", New_String_category_id);
-                    newActivity.putExtra("product_id", s_ID);
-                    newActivity.putExtra("product_name", s_NAME);
-                    newActivity.putExtra("product_price", s_PRICE);
-                    newActivity.putExtra("product_img_1", s_IMAGE);
+                    newActivity.putExtra("detail_id", s_ID);
+                    newActivity.putExtra("car_detail", s_NAME);
+                    newActivity.putExtra("car_price", s_PRICE);
+                    newActivity.putExtra("car_img", s_IMAGE);
+
+                    newActivity.putExtra("car_seat_number", s_CAR_SEAT_NUMBER);
+                    newActivity.putExtra("car_cylinder", s_CAR_CYLINDER);
+                    newActivity.putExtra("car_horse_power", s_CAR_HORSE_POWER);
+
                     startActivity(newActivity);
 
 
@@ -221,24 +242,24 @@ public class Show_All extends AppCompatActivity {
             // R.id.
             TextView txt_id = (TextView) convertView.findViewById(R.id.txt_id);
             txt_id.setPadding(10, 0, 0, 0);
-            txt_id.setText(MyArrList.get(position).get("product_id") + ".");
+            txt_id.setText(MyArrList.get(position).get("detail_id") + ".");
 
             // R.id.
             TextView txt1 = (TextView) convertView.findViewById(R.id.txt1);
             txt1.setPadding(5, 0, 0, 0);
-            txt1.setText(MyArrList.get(position).get("product_name") + ".");
+            txt1.setText(MyArrList.get(position).get("car_detail") + ".");
 
             // R.id.
             TextView txt2 = (TextView) convertView.findViewById(R.id.txt2);
             txt2.setPadding(5, 0, 0, 0);
-            txt2.setText(MyArrList.get(position).get("product_price") + ".");
+            txt2.setText(MyArrList.get(position).get("car_price") + ".");
 
             // ImageView imgview1 = (ImageView) convertView.findViewById(R.id.image1);
             imgview1 = (ImageView) convertView.findViewById(R.id.image1);
 
 
             Picasso.with(Show_All.this)
-                    .load(""+MyArrList.get(position).get("product_img_1"))
+                    .load(""+MyArrList.get(position).get("car_img"))
                     // .placeholder(R.drawable.placeholder)   // optional
                     //.error(R.drawable.error)      // optional
                     //.resize(400,400)                        // optional

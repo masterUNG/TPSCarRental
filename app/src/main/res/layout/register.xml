@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,17 +34,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="50px"
-                android:text="ลงทะเบียนเข้าใช้งาน"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:text="Register"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="บัญชีผู้ใช้งาน"
                 android:layout_gravity="left"
-                android:layout_marginTop="10px"
                 android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Username: "
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
@@ -54,8 +55,18 @@
                 android:layout_margin="10px"
                 android:layout_marginLeft="10px"
                 android:ems="10"
-                android:hint="บัญชีผู้ใช้งาน"
+                android:hint="Username"
                 android:textColor="#0000CC" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Password: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
                 android:id="@+id/txtPassword"
@@ -64,9 +75,18 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="รหัสผ่าน"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Confirm Password: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
                 android:id="@+id/txtConPassword"
@@ -75,9 +95,18 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="กรุณาพิมพ์รหัสผ่านอีกครั้ง"
+                android:hint="Confirm Password"
                 android:inputType="textPassword"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Firstname: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
                 android:id="@+id/txtFname"
@@ -86,8 +115,17 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="ชื่อ"
+                android:hint="Firstname"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Lastname: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
                 android:id="@+id/txtLname"
@@ -96,8 +134,17 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="นามสกุล"
+                android:hint="Lastname"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Address: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
 
             <EditText
@@ -107,8 +154,17 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="ที่อยู่"
+                android:hint="Address"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="E-mail: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
 
             <EditText
@@ -118,8 +174,17 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="อีเมลล์"
+                android:hint="E-mail"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Citizen ID: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
                 android:id="@+id/txtCiziten_id"
@@ -128,8 +193,17 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="หมายเลขบัตรประจำตัวประชาชน"
+                android:hint="Citizen ID"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Driver License Number: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
                 android:id="@+id/txtDriver_license_number"
@@ -138,8 +212,17 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="เลขที่ใบขับขี่"
+                android:hint="Driver License Number"
                 android:textColor="#0000CC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Telephone Number: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <EditText
                 android:id="@+id/txtTel"
@@ -148,7 +231,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10px"
                 android:ems="10"
-                android:hint="เบอร์โทรศัพท์"
+                android:hint="Telephone Number"
                 android:textColor="#0000CC" />
 
 
@@ -160,7 +243,7 @@
                 android:layout_margin="12dp"
                 android:background="@color/colorPrimary"
                 android:ems="15"
-                android:text="ลงทะเบียน"
+                android:text="Register"
                 android:textAppearance="@android:style/TextAppearance.Inverse" />
 
 
@@ -172,7 +255,7 @@
                 android:layout_margin="12dp"
                 android:background="@color/colorPrimary"
                 android:ems="15"
-                android:text="ย้อนกลับ"
+                android:text="Back"
                 android:textAppearance="@android:style/TextAppearance.Inverse" />
 
 

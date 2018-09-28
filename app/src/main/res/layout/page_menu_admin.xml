@@ -1,13 +1,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
     <LinearLayout
-        android:background="@drawable/bg_clear"
         android:id="@+id/mainLayout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="@drawable/bg_clear"
         android:descendantFocusability="beforeDescendants"
         android:focusableInTouchMode="true"
         android:orientation="vertical">
@@ -18,8 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="2px"
-            android:text="เมนูหลัก"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:text="Main Menu"
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
 
         <TextView
@@ -30,7 +31,7 @@
             android:layout_margin="2dp"
             android:text="MemberID"
             android:textColor="#0000CC"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/txtUsername"
@@ -49,35 +50,42 @@
             android:layout_margin="10dp"
             android:background="#ff0a0a"
             android:ems="15"
-            android:textStyle="bold"
             android:text="Page_Spinner_Category"
-            android:visibility="gone"
-            />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
-
-        <Button
-            android:id="@+id/b_Show_Category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_button"
-            android:text="รถที่พร้อมให้บริการ"
-            android:textAppearance="@android:style/TextAppearance.Inverse"
-            android:visibility="gone"/>
 
         <Button
             android:id="@+id/b_Add_Car"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:text="เพิ่มรถ"
+            android:text="Add Car"
             android:textAppearance="@android:style/TextAppearance.Inverse" />
+
+        <Button
+            android:id="@+id/b_Show_Category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="View Aviable car"
+            android:textAppearance="@android:style/TextAppearance.Inverse"
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/b_Show_Order_All"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:text="จัดการรายการจอง"
+            android:text="Manage Booking List"
+            android:textAppearance="@android:style/TextAppearance.Inverse" />
+
+        <Button
+            android:id="@+id/manage_member_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="Manage Member Account"
             android:textAppearance="@android:style/TextAppearance.Inverse" />
 
         <Button
@@ -85,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:text="ออกรายงาน"
+            android:text="Report / Static"
             android:textAppearance="@android:style/TextAppearance.Inverse" />
 
         <Button
@@ -93,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:text="ออกจากระบบ"
+            android:text="Logout"
             android:textAppearance="@android:style/TextAppearance.Inverse" />
 
         <Button
@@ -104,7 +112,7 @@
             android:background="@drawable/bg_button"
             android:text="ออกจากแอพลิเคชั่น"
             android:textAppearance="@android:style/TextAppearance.Inverse"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
     </LinearLayout>
 
