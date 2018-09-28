@@ -51,14 +51,14 @@ public class Show_Detail_And_Rent extends AppCompatActivity {
 
         final Intent intent = getIntent();
         String s_ID = intent.getStringExtra("detail_id");
-        String s_NAME = intent.getStringExtra("car_detail");
+        String s_NAME = intent.getStringExtra("model_name");
         String s_PRICE = intent.getStringExtra("car_price");
         String s_IMAGE = intent.getStringExtra("car_img");
 //        String s_CYLINDER = intent.getStringExtra("car_cylinder");
 //        String s_HORSE_POWER = intent.getStringExtra("car_horse_power");
-        String s_CAR_SEAT_NUMBER = intent.getStringExtra("car_seat_number");
-        String s_CAR_CYLINDER = intent.getStringExtra("car_cylinder");
-        String s_CAR_HORSE_POWER = intent.getStringExtra("car_horse_power");
+        String s_CAR_SEAT_NUMBER = intent.getStringExtra("model_seat_number");
+        String s_CAR_CYLINDER = intent.getStringExtra("model_cylinder");
+        String s_CAR_HORSE_POWER = intent.getStringExtra("model_horse_power");
 
         New_String_product_img_1 = intent.getStringExtra("car_img");
 
@@ -94,15 +94,15 @@ public class Show_Detail_And_Rent extends AppCompatActivity {
 
                 //intent.putExtra("category_id", s_category_id);
                 intent.putExtra("detail_id", tv_product_id.getText().toString().trim());
-                intent.putExtra("car_detail", tv_product_name.getText().toString().trim());
+                intent.putExtra("model_name", tv_product_name.getText().toString().trim());
                 intent.putExtra("car_price", tv_product_price.getText().toString().trim());
                 intent.putExtra("car_img", New_String_product_img_1);
 
 //                intent.putExtra("car_cylinder", tv_car_cylinder.getText().toString().trim());
 //                intent.putExtra("car_horse_power", tv_car_horse_power.getText().toString().trim());
-                intent.putExtra("car_seat_number", tv_car_seat_number.getText().toString().trim());
-                intent.putExtra("car_cylinder", tv_car_cylinder.getText().toString().trim());
-                intent.putExtra("car_horse_power", tv_car_horse_power.getText().toString().trim());
+                intent.putExtra("model_seat_number", tv_car_seat_number.getText().toString().trim());
+                intent.putExtra("model_cylinder", tv_car_cylinder.getText().toString().trim());
+                intent.putExtra("model_horse_power", tv_car_horse_power.getText().toString().trim());
 
 
 

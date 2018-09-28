@@ -145,10 +145,10 @@ public class DialogActivity_1 extends Activity implements View.OnClickListener {
 
         final Intent intent = getIntent();
         String s_ID = intent.getStringExtra("detail_id");
-        String s_NAME = intent.getStringExtra("car_detail");
+        String s_NAME = intent.getStringExtra("model_name");
         String s_PRICE = intent.getStringExtra("car_price");
         String s_IMAGE = intent.getStringExtra("car_img");
-        String s_CAR_SEAT_NUMBER = intent.getStringExtra("car_seat_number");
+        String s_CAR_SEAT_NUMBER = intent.getStringExtra("model_seat_number");
 
 
        // New_String_product_img_1 = intent.getStringExtra("product_img_1");

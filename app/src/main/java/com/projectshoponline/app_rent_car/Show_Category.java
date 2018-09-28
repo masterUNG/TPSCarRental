@@ -186,12 +186,14 @@ public class Show_Category extends AppCompatActivity {
                         // R.id.
             TextView txt_id = (TextView) convertView.findViewById(R.id.txt_id);
             txt_id.setPadding(10, 0, 0, 0);
-            txt_id.setText(MyArrList.get(position).get("category_id") + ".");
+//            txt_id.setText(MyArrList.get(position).get("category_id") + ".");
+            txt_id.setText(MyArrList.get(position).get("category_id"));
 
                         // R.id.
             TextView txt1 = (TextView) convertView.findViewById(R.id.txt1);
             txt1.setPadding(5, 0, 0, 0);
-            txt1.setText(MyArrList.get(position).get("category_name") + ".");
+//            txt1.setText(MyArrList.get(position).get("category_name") + ".");
+            txt1.setText(MyArrList.get(position).get("category_name"));
 
            // ImageView imgview1 = (ImageView) convertView.findViewById(R.id.image1);
             imgview1 = (ImageView) convertView.findViewById(R.id.image1);

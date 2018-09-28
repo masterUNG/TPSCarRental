@@ -221,51 +221,71 @@ public class Add_Car extends AppCompatActivity {
                 //we will throw input error
 
 
-
+                // Category ID
                 if (txtUsername.getText().toString().trim().isEmpty()) {
                     txtUsername.setError("Enter tags first");
                     txtUsername.requestFocus();
-
-
-
                     return;
                 }
 
+                // Brand ID
+                if (txtCar_brand.getText().toString().trim().isEmpty()) {
+                    txtCar_brand.setError("Enter tags first");
+                    txtCar_brand.requestFocus();
+                    return;
+                }
 
+                // Car Body Number
+                if (txtCar_body_number.getText().toString().trim().isEmpty()) {
+                    txtCar_body_number.setError("Enter tags first");
+                    txtCar_body_number.requestFocus();
+                    return;
+                }
+
+                // Car Register Number (เลขที่ประกันภัย)
+                if (txtCar_register_number.getText().toString().trim().isEmpty()) {
+                    txtCar_register_number.setError("Enter tags first");
+                    txtCar_register_number.requestFocus();
+                    return;
+                }
+
+                // Model ID
                 if (txtPassword.getText().toString().trim().isEmpty()) {
                     txtPassword.setError("Enter tags first");
                     txtPassword.requestFocus();
-
-
-
                     return;
                 }
 
-                if (txtAddress.getText().toString().trim().isEmpty()) {
-                    txtAddress.setError("Enter tags first");
-                    txtAddress.requestFocus();
-
-
-
+                // Car Policy Number
+                if (txtPolicy_number.getText().toString().trim().isEmpty()) {
+                    txtPolicy_number.setError("Enter tags first");
+                    txtPolicy_number.requestFocus();
                     return;
                 }
+
+                // Car Color
+                if (txtCar_color.getText().toString().trim().isEmpty()) {
+                    txtCar_color.setError("Enter tags first");
+                    txtCar_color.requestFocus();
+                    return;
+                }
+
+                // Car Price
                 if (txtEmail.getText().toString().trim().isEmpty()) {
                     txtEmail.setError("Enter tags first");
                     txtEmail.requestFocus();
-
-
-
                     return;
                 }
 
-//                if (txtTel.getText().toString().trim().isEmpty()) {
-//                    txtTel.setError("Enter tags first");
-//                    txtTel.requestFocus();
-//
-//
-//
+
+
+                // Car Description
+//                if (txtAddress.getText().toString().trim().isEmpty()) {
+//                    txtAddress.setError("Enter tags first");
+//                    txtAddress.requestFocus();
 //                    return;
 //                }
+
 
                 uploaduserimage();
 
@@ -656,7 +676,7 @@ public class Add_Car extends AppCompatActivity {
     public String getStringImage(Bitmap bitmap){
         Log.i("MyHitesh",""+bitmap);
         ByteArrayOutputStream baos=new  ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
+        bitmap.compress(Bitmap.CompressFormat.PNG,30, baos);
         byte [] b=baos.toByteArray();
         String temp= Base64.encodeToString(b, Base64.DEFAULT);
 

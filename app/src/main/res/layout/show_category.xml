@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="100dp"
-                android:text="Category"
+                android:text="Car Category"
                 android:textColor="#e92d3a"
                 android:textSize="17dp"
                 android:textStyle="bold" />

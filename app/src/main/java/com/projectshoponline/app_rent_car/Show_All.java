@@ -136,13 +136,13 @@ public class Show_All extends AppCompatActivity {
 
                 map = new HashMap<String, String>();
                 map.put("detail_id", c.getString("detail_id"));
-                map.put("car_detail", c.getString("car_detail"));
+                map.put("model_name", c.getString("model_name"));
                 map.put("car_price", c.getString("car_price"));
                 map.put("car_img", c.getString("car_img"));
 
-                map.put("car_seat_number", c.getString("car_seat_number"));
-                map.put("car_cylinder", c.getString("car_cylinder"));
-                map.put("car_horse_power", c.getString("car_horse_power"));
+                map.put("model_seat_number", c.getString("model_seat_number"));
+                map.put("model_cylinder", c.getString("model_cylinder"));
+                map.put("model_horse_power", c.getString("model_horse_power"));
 
 
 
@@ -161,7 +161,7 @@ public class Show_All extends AppCompatActivity {
                     String s_ID = MyArrList.get(position).get("detail_id")
                             .toString();
 
-                    String s_NAME = MyArrList.get(position).get("car_detail")
+                    String s_NAME = MyArrList.get(position).get("model_name")
                             .toString();
 
                     String s_PRICE = MyArrList.get(position).get("car_price")
@@ -170,26 +170,26 @@ public class Show_All extends AppCompatActivity {
                     String s_IMAGE = MyArrList.get(position).get("car_img")
                             .toString();
 
-                    String s_CAR_SEAT_NUMBER = MyArrList.get(position).get("car_seat_number")
+                    String s_CAR_SEAT_NUMBER = MyArrList.get(position).get("model_seat_number")
                             .toString();
 
-                    String s_CAR_CYLINDER = MyArrList.get(position).get("car_cylinder")
+                    String s_CAR_CYLINDER = MyArrList.get(position).get("model_cylinder")
                             .toString();
 
-                    String s_CAR_HORSE_POWER = MyArrList.get(position).get("car_horse_power")
+                    String s_CAR_HORSE_POWER = MyArrList.get(position).get("model_horse_power")
                             .toString();
 
 
                     Intent newActivity = new Intent(Show_All.this,Show_Detail_And_Rent.class);
                    // newActivity.putExtra("category_id", New_String_category_id);
                     newActivity.putExtra("detail_id", s_ID);
-                    newActivity.putExtra("car_detail", s_NAME);
+                    newActivity.putExtra("model_name", s_NAME);
                     newActivity.putExtra("car_price", s_PRICE);
                     newActivity.putExtra("car_img", s_IMAGE);
 
-                    newActivity.putExtra("car_seat_number", s_CAR_SEAT_NUMBER);
-                    newActivity.putExtra("car_cylinder", s_CAR_CYLINDER);
-                    newActivity.putExtra("car_horse_power", s_CAR_HORSE_POWER);
+                    newActivity.putExtra("model_seat_number", s_CAR_SEAT_NUMBER);
+                    newActivity.putExtra("model_cylinder", s_CAR_CYLINDER);
+                    newActivity.putExtra("model_horse_power", s_CAR_HORSE_POWER);
 
                     startActivity(newActivity);
 
@@ -247,12 +247,14 @@ public class Show_All extends AppCompatActivity {
             // R.id.
             TextView txt1 = (TextView) convertView.findViewById(R.id.txt1);
             txt1.setPadding(5, 0, 0, 0);
-            txt1.setText(MyArrList.get(position).get("car_detail") + ".");
+//            txt1.setText(MyArrList.get(position).get("model_name") + ".");
+            txt1.setText(MyArrList.get(position).get("model_name"));
 
             // R.id.
             TextView txt2 = (TextView) convertView.findViewById(R.id.txt2);
             txt2.setPadding(5, 0, 0, 0);
-            txt2.setText(MyArrList.get(position).get("car_price") + ".");
+//            txt2.setText(MyArrList.get(position).get("car_price") + ".");
+            txt2.setText(MyArrList.get(position).get("car_price"));
 
             // ImageView imgview1 = (ImageView) convertView.findViewById(R.id.image1);
             imgview1 = (ImageView) convertView.findViewById(R.id.image1);
