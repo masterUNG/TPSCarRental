@@ -61,8 +61,6 @@ public class Login extends Activity {
             public void onClick(View v) {
 
 
-
-
                 String url = "http://androidthai.in.th/nor/rentcar_json/app_login.php";
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
